@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <title>Selectors</title>
+</head>
+<style>
+    .outer{
+        display: table-cell;
+        border-style: solid;
+        padding: 20px;
+        background-color: skyblue;
+    }
+
+    .outer p{
+        display: table-cell;
+        border-style: solid;
+        padding: 20px;
+        background-color: orange;
+    }
+
+    .outer span{
+        display: table-cell;
+        border-style: solid;
+        padding: 20px;
+        background-color: magenta;
+    }
+</style>
+<body>
+    <p></p>
+    <p id="something"></p>
+    <p></p>
+    <p id="boldText"></p>
+    <p></p>
+    <p class="thisisaparagraph"></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div id="section">
+        This is a div
+        <p></p>
+
+    </div>
+    <button>Click me!</button>
+
+    <div class="outer">
+        Div Text
+        <p class="innerParagraph">
+            Paragraph text
+            <span>Span Text</span>
+        </p> 
+    </div>
+    <script>
+        // ready()→HTML構造が組み立てられた後に直ぐ処理を実行するメゾット
+    
+        $(document).ready(function(){
+            $("[class='boldText']").append("This is a paragraph~");
+
+            const newDiv = $("<div>")
+            const newListItem = $("<li>a list item</li>");
+
+            $("#section").html(newListItem)
+
+            $("button").on("click", function(){
+                // alert("Button clicked!")
+                console.log($(this));
+                $(this).text("<i>Clicked</i>")  //innerText
+                $(this).html("<i>Clicked</i>") //innerHTML
+
+                console.log("Event type: ", event.type);
+                console.log("Button or key pressed", event.which);
+                console.log("Target Element", event.target);
+            })
+
+            $(".boldText").hover(function(event){
+                console.log("hovering");
+            }, function(){
+                console.log("left the element...");
+            })
+
+            // $(selector).on({
+            //     event_1: function(){}
+            //     event_2: function(){}
+            //     event_3: function(){}
+            // })
+
+            $('div').on({
+                click: function(){
+                    alert("Click event triggered")
+                },
+                mouseenter: function(){
+                    console.log("Entered element")
+                },
+                mouseleve: function(){
+                    console.log("Left element")
+                }
+            })
+
+
+            //Event bubbling
+            $('.outer').click(function(){
+                alert("Div is clicked");
+            })
+
+            $('.outer').click(function(){
+                alert("Div is clicked");
+            })
+
+            $('.outer').click(function(){
+                alert("Div is clicked");
+            })
+            
+        });
+    </script>
+</body>
+</html>
