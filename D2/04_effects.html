@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <title>Document</title>
+<style>
+body {
+    background-color: #dbe1f5;
+    text-align: center;
+}
+
+div,p,span{
+    text-align: center;
+    display: table-cell;
+    border-style: solid;
+    padding: 15px;
+    margin: 15px;
+    border-color: rab(77, 150, 145);
+}
+
+
+</style>
+</head>
+<body>
+    <!-- <button id="hideBtn">Hide</button>
+    <button id="showBtn">Show</button>
+    <button id="toggleBtn">Toggle</button>
+    <div>(div)</div>
+    </div> -->
+
+    <button>Fade out</button>
+    <script>
+        $(document).ready(function(){
+            // $("#hideBtn").click(function(){
+            //     $("div").hide()
+            // })
+            // $("#showBtn").click(function(){
+            //     $("div").show()
+            // })
+            // $("#toggleBtn").click(function(){
+            //     $("div").toggle
+            // })
+
+            $("button").click(function(){
+                $("div").fadeOut(3000);
+            })
+        });
+    </script>
+</body>
+</html>

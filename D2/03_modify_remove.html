@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <title>Document</title>
+<style>
+body {
+    background-color: #dbe1f5;
+    text-align: center;
+}
+
+div,p,span{
+    text-align: center;
+    display: table-cell;
+    border-style: solid;
+    padding: 15px;
+    margin: 15px;
+    border-color: rab(77, 150, 145);
+}
+
+
+</style>
+</head>
+<body>
+    <div>
+        (div text)
+        <span>(span text</span>
+        <p id="empty">(para text)</p>
+    </div>
+    <script>
+        $(document).ready(function(){
+            // $(span).click(function(){
+            //     alert("Span clicked")
+            // })
+            // $("p").click(function(){
+            //     alert("Paragraph clicked")
+            // })
+            $("empty").click(function(){
+                $("p").empty()
+            })
+        });
+    </script>
+</body>
+</html>
